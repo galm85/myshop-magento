@@ -1,0 +1,17 @@
+<?php
+
+
+
+?>
+
+<div class="reviews">
+    <h3><?=$block->getTitle()?></h3>
+    <h2>This is the reviews page</h2>
+    <h4><?=$block->getData('author')?></h4>
+    <?php foreach ($block->getReviews() as $review):?>
+        <div class="review">
+            <h4><?=$review['title']?></h4>
+            <p><?= $review['content'] ?></p>
+        </div>
+    <?php endforeach;?>
+</div>
