@@ -30,4 +30,9 @@
     <div class="mydiv">
         <?= $content?>
     </div>
+
+
+    <div>
+        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('myshop.card.right')->toHtml(); ?>
+    </div>
 </div>
