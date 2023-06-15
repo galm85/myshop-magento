@@ -1,0 +1,33 @@
+<?php
+
+    /** @var  \Magento\Cms\Block $block */
+
+    $content =  $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('homepage.banner')->toHtml();
+
+
+?>
+
+
+
+<div class="homepage-container">
+
+    <div class="homepage-header">
+        <h2>My Shop</h2>
+    </div>
+
+    <div class="homepage-banner-1">
+        <h3>Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laborum nostrum quis. Aspernatur dolorum
+            excepturi expedita explicabo ipsam, ratione ullam.</p>
+    </div>
+
+    <div class="homepage-banner-2">
+        <h3>Title 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laborum nostrum quis. Aspernatur dolorum
+            excepturi expedita explicabo ipsam, ratione ullam.</p>
+    </div>
+
+    <div class="mydiv">
+        <?= $content?>
+    </div>
+</div>

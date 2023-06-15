@@ -346,6 +346,7 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
+        'Gal_Banner' => 1,
         'Gal_Review' => 1,
         'Macademy_Blog' => 1,
         'MageMastery_Blog' => 1,

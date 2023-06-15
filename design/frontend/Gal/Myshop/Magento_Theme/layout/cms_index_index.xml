@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<page   layout="2columns-right"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="myshop.homepage" template="Magento_Theme::pages/homepage.phtml"/>
+        </referenceContainer>
+
+<!--        TODO create a new cms block and insert here-->
+
+    </body>
+</page>
