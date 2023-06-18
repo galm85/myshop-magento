@@ -1,0 +1,39 @@
+main{
+
+}
+
+
+
+// Mobile
+.media-width(@extremum,@break) when (@extremum = 'max') and (@break = @screen__s){
+    main{
+        background-color: red;
+    }
+
+
+
+
+    .slick-dots li button{
+        width:15px;
+        height: 5px;
+        border-radius: 0;
+        background-color: #ffffff;
+        border: 1px solid #ffffff;
+    }
+
+    .slick-dots .slick-active button{
+
+        margin-right: 35px;
+        width: 45px;
+    }
+}
+
+
+
+
+// Big Screens
+.media-width(@extremum,@break) when (@extremum = 'min') and (@break = @screen__l){
+    main{
+        background-color: blue;
+    }
+}
