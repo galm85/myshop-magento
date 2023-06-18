@@ -1,9 +1,22 @@
-<?xml version="1.0"?>
-
-<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="page.main.title" destination="product.info.main" before="-"/>
-        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
-        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+
+
+
+        <referenceBlock name="page.main.title">
+            <arguments>
+                <argument name="css_class" xsi:type="string">product</argument>
+                <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="product.info.main">
+            <block name="myshop.product.title" template="Magento_Catalog::title.phtml" class="Magento\Theme\Block\Html\Title" before="-"/>
+            <block name="custom.product.view" template="Magento_Catalog::product/view.phtml" after="myshop.product.title"/>
+        </referenceContainer>
     </body>
+
+
+
+<!--    <referenceContainer name="product.info.main" display="false"/>-->
+        <referenceBlock name="page.main.title" display="false"/>
 </page>
