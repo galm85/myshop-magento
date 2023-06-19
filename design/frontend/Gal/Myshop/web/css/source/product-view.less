@@ -1,5 +1,60 @@
-.myshop-product__title{
-    color: @font-color-main;
-    font-size: 25px;
-    font-family: @myshop-main-font;
+& when (@media-common = true) {
+
+
+    .myshop-product-data {
+        background-color: #00ff80;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+        width: 100%;
+
+        &-details {
+            background-color: red;
+            width: 50%;
+            padding: 0 50px;
+
+
+            .myshop-product__title {
+                color: @font-color-main;
+                font-size: 25px;
+                font-family: @myshop-main-font;
+                font-weight: 700;
+            }
+        }
+
+        &-image {
+            background-color: #00feff;
+            width: 50%;
+
+            img {
+                border-radius: 30px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+    }
+
+
+
+    .myshop-product-description{
+        background-color: yellowgreen;
+        font-size: 20px;
+        font-weight: 300;
+        color: gray;
+        font-family: @myshop-main-font;
+        margin-bottom: 30px;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+

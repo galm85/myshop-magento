@@ -2,21 +2,46 @@
     <body>
 
 
+        <referenceContainer name="content">
 
-        <referenceBlock name="page.main.title">
-            <arguments>
-                <argument name="css_class" xsi:type="string">product</argument>
-                <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
-            </arguments>
-        </referenceBlock>
-        <referenceContainer name="product.info.main">
-            <block name="myshop.product.title" template="Magento_Catalog::title.phtml" class="Magento\Theme\Block\Html\Title" before="-"/>
-            <block name="custom.product.view" template="Magento_Catalog::product/view.phtml" after="myshop.product.title"/>
+
+            <container name="myshop.product.data" htmlTag="div" htmlClass="myshop-product-data" before="-">
+
+                <container name="myshop.product.data.image" htmlTag="div" htmlClass="myshop-product-data-image">
+                    <block class="Magento\Catalog\Block\Product\View\Gallery" name="product.info.media.image" template="Magento_Catalog::product/view/gallery.phtml">
+                        <arguments>
+                            <argument name="gallery_options" xsi:type="object">Magento\Catalog\Block\Product\View\GalleryOptions</argument>
+                            <argument name="imageHelper" xsi:type="object">Magento\Catalog\Helper\Image</argument>
+                        </arguments>
+                    </block>
+                </container>
+
+                <container name="myshop.product.data.details" htmlTag="div" htmlClass="myshop-product-data-details">
+<!--                    <block name="myshop.product.title"  template="Magento_Catalog::product/title.phtml" class="Magento\Theme\Block\Html\Title" before="-"/>-->
+<!--                    <block name="myshop.product.price" template="Magento_Catalog::product/price.phtml"  class="Magento\Catalog\Pricing\Render"/>-->
+                    <referenceContainer name="product.info.price">
+
+                    </referenceContainer>
+
+
+                </container>
+
+            </container>
+
+            <container name="myshop.product.description" htmlTag="div" htmlClass="myshop-product-description" after="myshop.product.data">
+                <block  name="myshop.product.details.block" template="Magento_Catalog::product/description.phtml" />
+            </container>
+
         </referenceContainer>
+
+
+
     </body>
 
 
 
-<!--    <referenceContainer name="product.info.main" display="false"/>-->
-        <referenceBlock name="page.main.title" display="false"/>
+    <referenceContainer name="product.info.main" display="false"/>
+    <referenceBlock name="page.main.title" display="false"/>
+    <referenceContainer name="product.info.media" display="false"/>
+
 </page>
