@@ -18,11 +18,10 @@
 
                 <container name="myshop.product.data.details" htmlTag="div" htmlClass="myshop-product-data-details">
 <!--                    <block name="myshop.product.title"  template="Magento_Catalog::product/title.phtml" class="Magento\Theme\Block\Html\Title" before="-"/>-->
-<!--                    <block name="myshop.product.price" template="Magento_Catalog::product/price.phtml"  class="Magento\Catalog\Pricing\Render"/>-->
-                    <referenceContainer name="product.info.price">
-
-                    </referenceContainer>
-
+<!--                    <block name="myshop.product.price" template="Magento_Catalog::product/price.phtml"  class="Gal\Gwd\Block\Product"/>-->
+                    <block name="myshop.product.view" template="Magento_Catalog::product/view.phtml" class="Gal\Gwd\Block\Product">
+                        <referenceBlock name="additional"/>
+                    </block>
 
                 </container>
 
@@ -30,7 +29,10 @@
 
             <container name="myshop.product.description" htmlTag="div" htmlClass="myshop-product-description" after="myshop.product.data">
                 <block  name="myshop.product.details.block" template="Magento_Catalog::product/description.phtml" />
+
             </container>
+
+
 
         </referenceContainer>
 

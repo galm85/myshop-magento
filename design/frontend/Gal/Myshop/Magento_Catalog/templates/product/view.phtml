@@ -1,15 +1,52 @@
 <?php
 
-//    $qty = $block->getData('qty');
-
 /**
- * @var $block \Magento\Theme\Block\Html\Title
+ * @var $block Gal\Gwd\Block\Product
+ * @var $product Magento\Catalog\Model\Product
  */
-$titleIdHtml = ($block->getTitleId()) ? ' id="' . $block->escapeHtmlAttr($block->getTitleId()) . '"' : '';
-$titleClass = ($block->getTitleClass()) ? ' ' . $block->getTitleClass() : '';
-$title = $block->getPageTitle();
-$title = 'dasdad';
+$product  = $block->getCurrentProduct();
 ?>
 
 
-<h1>This is my Temp: <?=$title?> </h1>
+<div class="myshop-product-data-card">
+    <h3 class="myshop-product-data-card__title"><?=$product->getName();?></h3>
+    <small class="myshop-product-data-card__sku"><?=$product->getSku();?></small>
+    <p class="myshop-product-data-card__price"> <?=$block->getFormattedPrice() ?></p>
+   <div class="myshop-product-data-card__description">
+       <h6>Description</h6>
+        <?= $product->getDescription(); ?>
+   </div>
+
+
+
+    <div>
+        <button id="more-btn">More Information</button>
+    </div>
+
+    <div id="popup-information">
+        <div class="popup-box">
+            <?php echo $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes')->setTemplate('Magento_Catalog::product/attribute.phtml')->toHtml(); ?>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+    const moreBtn = document.getElementById('more-btn');
+    const popup = document.getElementById('popup-information');
+
+    moreBtn.addEventListener('click',()=>{
+        popup.style.display = 'flex';
+    })
+
+    popup.addEventListener('click',()=>{
+        popup.style.display = 'none';
+    })
+
+    // $('#popup-information').click(()=>{
+    //     alert('popup');
+    // })
+
+</script>

@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) :?>
+    <div class="more-info">
+                <h3 class="more-info__title"><?=__('More Information')?></h3>
+            <?php foreach ($_additional as $_data) :?>
+                <div class="more-info__row">
+                    <div class="more-info__label">
+                        <?= $block->escapeHtml($_data['label']) ?>
+                    </div>
+                    <div class="more-info__value" >
+                        <?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <div class="more-info__close">
+            <button>Close</button>
+        </div>
+    </div>
+<?php endif;?>
