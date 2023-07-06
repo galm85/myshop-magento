@@ -1,0 +1,19 @@
+{
+  "name": "macademy/magento2-theme-juno",
+  "description": "The Juno theme description",
+  "require": {
+    "php": "^8",
+    "../../../../../vendor/magento/framework": ">=103",
+    "../../../../../vendor/magento/theme-frontend-blank": ">=100"
+  },
+  "type": "magento2-theme",
+  "version": "1.0.0",
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ]
+  }
+}
