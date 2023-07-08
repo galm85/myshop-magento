@@ -353,6 +353,7 @@ return [
         'Macademy_JsFun' => 1,
         'MageMastery_Blog' => 1,
         'MageMastery_FirstLayout' => 1,
+        'MarkShust_LayoutHandleLogger' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1
