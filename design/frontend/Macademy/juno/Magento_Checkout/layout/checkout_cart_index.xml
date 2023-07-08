@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+            <referenceContainer name="cart.summary">
+               <container name="cart-hours-container" htmlTag="div" htmlClass="cart-hours-container" after="checkout.cart.methods.bottom" >
+                   <block name="cart.hours" template="Juno_Theme::hours.phtml" ifconfig="general/store_information/hours">
+                        <arguments>
+                            <argument name="store_hours_view_model" xsi:type="object">Juno\Theme\ViewModel\StoreHours</argument>
+                        </arguments>
+                   </block>
+                   <block name="phone-number" template="Juno_Theme::phone-number.phtml" ifconfig="general/store_information/phone">
+                       <arguments>
+                           <argument name="phone_number_view_model" xsi:type="object">Juno\Theme\ViewModel\PhoneNumber</argument>
+                       </arguments>
+                   </block>
+               </container>
+            </referenceContainer>
+    </body>
+</page>
