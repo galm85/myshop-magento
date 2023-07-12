@@ -1,24 +1,15 @@
 define([
     'uiComponent',
-    'ko'
+    'ko',
+    'Macademy_InventoryFulfillment/js/model/box-configurations',
+    'Macademy_InventoryFulfillment/js/model/sku'
 ],function(
     Component,
-    ko
+    ko,
+    boxConfigurationsModel,
+    skuModel
 ){
    'use strict';
-
-   const boxConfiguration = ()=>{
-
-       return{
-           length: ko.observable(),
-           width: ko.observable(),
-           height: ko.observable(),
-           weight: ko.observable(),
-           unitsPerBox: ko.observable(),
-           numberOfBoxes: ko.observable(),
-       }
-   }
-
 
    return Component.extend({
 
@@ -36,22 +27,30 @@ define([
                    height:9
                }
            ]),
-           boxConfigurations: ko.observableArray([boxConfiguration()]),
+           boxConfigurationsModel: boxConfigurationsModel,
        },
 
        initialize(){
            this._super();
            console.log('This is the boxConfiguration Component');
+           skuModel.isSuccess.subscribe((value)=>{
+               console.log('sku sucess: ',value);
+           });
+           skuModel.isSuccess.subscribe((value)=>{
+               console.log('sku sucess old value: ',value);
+           },null,'beforeChange');
         },
 
        handleAdd(){
-           this.boxConfigurations.push(boxConfiguration());
+           // this.boxConfigurations.push(boxConfiguration());
+           boxConfigurationModel.add();
        },
 
        handleDelete(index){
             console.log('this',this);
             console.log('index',index);
-            this.boxConfigurations.splice(index,1);
+            // this.boxConfigurations.splice(index,1);
+           boxConfigurationModel.delete(index);
        },
 
        handleSubmit(){

@@ -4,7 +4,7 @@ define([
     'mage/storage',
     'jquery',
     'mage/translate',
-    'Macademy_InventoryFulfill/js/model/sku'
+    'Macademy_InventoryFulfillment/js/model/sku'
 ],function(
     Component,
     ko,
