@@ -3,13 +3,15 @@ define([
     'ko',
     'mage/storage',
     'jquery',
-    'mage/translate'
+    'mage/translate',
+    'Macademy_InventoryFulfill/js/model/sku'
 ],function(
     Component,
     ko,
     storage,
     $,
-    $t
+    $t,
+    skuModel
     ){
 
     'use strict';
@@ -18,10 +20,10 @@ define([
 
         defaults:{
           // template:"Macademy_InventoryFulfillment/sku-lookup",
-            sku: ko.observable('24-MB01'),
+            sku: skuModel.sku,
             placeholder: $t('Example: %1').replace('%1','24-MB56'),
             messageResponse:ko.observable(''),
-            isSuccess:ko.observable(false),
+            isSuccess:skuModel.isSuccess
         },
         initialize(){
             this._super();
