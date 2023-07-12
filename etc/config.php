@@ -350,6 +350,7 @@ return [
         'Gal_Gwd' => 1,
         'Gal_Review' => 1,
         'Macademy_Blog' => 1,
+        'Macademy_InventoryFulfillment' => 1,
         'Macademy_JsFun' => 1,
         'MageMastery_Blog' => 1,
         'MageMastery_FirstLayout' => 1,
