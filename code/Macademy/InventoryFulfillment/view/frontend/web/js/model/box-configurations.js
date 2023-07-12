@@ -1,5 +1,6 @@
 define([
-    'ko'
+    'ko',
+    'Macademy_InventoryFulfillment/js/ko/extenders/numeric'
 ],function(
     ko
 ){
@@ -7,12 +8,12 @@ define([
 
         const divisor = 139;
         const data = {
-            length: ko.observable(),
-            width: ko.observable(),
-            height: ko.observable(),
-            weight: ko.observable(),
-            unitsPerBox: ko.observable(),
-            numberOfBoxes: ko.observable(),
+            length: ko.observable().extend({numeric:true}),
+            width: ko.observable().extend({numeric:true}),
+            height: ko.observable().extend({numeric:true}),
+            weight: ko.observable().extend({numeric:true}),
+            unitsPerBox: ko.observable().extend({numeric:true}),
+            numberOfBoxes: ko.observable().extend({numeric:true}),
         }
 
         data.dimensionalWeight =  ko.computed(()=>{
