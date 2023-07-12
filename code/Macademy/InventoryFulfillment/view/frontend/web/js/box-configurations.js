@@ -2,12 +2,14 @@ define([
     'uiComponent',
     'ko',
     'Macademy_InventoryFulfillment/js/model/box-configurations',
-    'Macademy_InventoryFulfillment/js/model/sku'
+    'Macademy_InventoryFulfillment/js/model/sku',
+    'jquery'
 ],function(
     Component,
     ko,
     boxConfigurationsModel,
-    skuModel
+    skuModel,
+    $
 ){
    'use strict';
 
@@ -43,18 +45,24 @@ define([
 
        handleAdd(){
            // this.boxConfigurations.push(boxConfiguration());
-           boxConfigurationModel.add();
+           boxConfigurationsModel.add();
        },
 
        handleDelete(index){
             console.log('this',this);
             console.log('index',index);
             // this.boxConfigurations.splice(index,1);
-           boxConfigurationModel.delete(index);
+           boxConfigurationsModel.delete(index);
        },
 
        handleSubmit(){
-           console.log('submit');
+
+           if($('.box-configurations form').valid()){
+                boxConfigurationsModel.isSuccess(true);
+           }else {
+               boxConfigurationsModel.isSuccess(false);
+           }
+
        }
 
     })

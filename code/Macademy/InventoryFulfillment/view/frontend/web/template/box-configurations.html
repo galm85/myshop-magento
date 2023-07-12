@@ -15,18 +15,18 @@
             <tbody data-bind="foreach: boxConfigurationsModel.boxConfigurations">
                 <tr>
                     <td>
-                        <input type="number" name="units_per_box" data-bind="textInput: unitsPerBox">
+                        <input type="number"  data-bind="textInput: unitsPerBox, attr: {name: 'units_per_box_'+$index()}" class="required-entry validate-greater-than-zero">
                     </td>
                     <td>
-                        <input type="number" name="number_of_boxes" data-bind="textInput: numberOfBoxes">
+                        <input type="number"  data-bind="textInput: numberOfBoxes, attr: {name: 'number_of_boxes_'+$index()}" class="required-entry validate-greater-than-zero">
                     </td>
                     <td>
-                        <input type="number" name="weight" data-bind="textInput: weight">
+                        <input type="number"  data-bind="textInput: weight, attr: {name: 'weight_'+$index()}" class="required-entry validate-greater-than-zero">
                     </td>
                     <td>
-                        <input type="number" name="length" data-bind="textInput: length"> X
-                        <input type="number" name="width" data-bind="textInput: width"> X
-                        <input type="number" name="height" data-bind="textInput: height">
+                        <input type="number"  data-bind="textInput: length, attr: {name: 'length_'+$index()}" class="required-entry validate-greater-than-zero"> X
+                        <input type="number"  data-bind="textInput: width, attr: {name: 'width_'+$index()}" class="required-entry validate-greater-than-zero"> X
+                        <input type="number"  data-bind="textInput: height, attr: {name: 'height_'+$index()}" class="required-entry validate-greater-than-zero">
                     </td>
                     <td>
                         <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent,$index())"><!-- ko i18n: 'Delete' --> <!-- /ko --></a>
