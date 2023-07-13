@@ -30,6 +30,7 @@ define([
                }
            ]),
            boxConfigurationsModel: boxConfigurationsModel,
+           skuModel:skuModel
        },
 
        initialize(){
